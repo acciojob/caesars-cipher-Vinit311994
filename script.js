@@ -35,15 +35,20 @@ function rot13(encodedStr) {
   let decodedArr = []; // Your Result goes here
   // Only change code below this line
 
-for(let i = 0 ; i < encodedStr.length ; i++) {
-        if(lookup[ encodedStr[i] ] === undefined){
-            decoderArr.push( encodedStr[i] ) ;
-        }   
-        else{ 
-            decoderArr.push(lookup[ encodedStr[i] ]);
+var arraywords=encoderStr.split(" ");
+
+	for(var i=0;i<arraywords.length;i++){
+		var newstring="";
+		var stringword=arraywords[i];
+
+		for(var j=0;j<stringword.length;j++){
+			newstring+=lookup[stringword.charAt(j)];
+		}
+	  
+            decoderArr.push(newstring);
         }
 
-  return decodedArr;//return decodedArr
+  return decodedArr.join(" ");//return decodedArr
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
